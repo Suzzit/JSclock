@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+
+        <div class="one">00</div>
+        <div class="two">00</div>
+        <div class="three">00</div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        let hoursec = document.querySelector(".one");
+        let minutesec = document.querySelector(".two");
+        let secondssec = document.querySelector(".three ");
+        let second;
+        let minute;
+
+
+
+        function updating() {
+            //here we update seconds, minutes and hours
+            if(seconds<60){
+                seconds++
+            }else{
+                seconds = 0;
+                minutes++;
+            }
+            if(minutes<60){
+                minute++
+            }else{
+                minutes = 0;
+                hours++
+            }
+            if(hours>12){
+                hours = 1;
+            }
+
+            // here we format the display of seconds, minutes and hours in 00 form
+            if (seconds < 10) {
+                second = "0" + seconds;
+            } else {
+                second = seconds;
+            }
+
+            if (minutes < 10) {
+                minute = "0" + minutes;
+            } else {
+                minute = minutes;
+            }
+
+            //here we format hours in 12 hours format
+            
+
+
+
+
+
+
+
+
+            hoursec.innerText = hours;
+            minutesec.innerText = minute;
+            secondssec.innerText = second;
+
+        }
+        setInterval(updating,1000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
